@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           // Left panel (20% of screen width)
           Container(
-            width: screenWidth * 0.2, // 20% of the screen width
+            width: screenWidth * 0.15, // 20% of the screen width
             color: const Color(0xFF00358C),
             child: Column(
               children: [
@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> {
 
                     return Padding(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 8.0, horizontal: 25.0),
+                          vertical: 8.0, horizontal: 12.0),
                       child: ElevatedButton(
                         onPressed: () {
                           setState(() {
