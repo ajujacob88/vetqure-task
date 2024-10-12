@@ -214,13 +214,14 @@ class GraphOne extends StatelessWidget {
                 const FlSpot(10, 20),
               ],
               isCurved: false,
-              color: Colors.blue,
-              dotData: FlDotData(show: true),
+              color: const Color.fromARGB(255, 8, 100, 175),
+              dotData: const FlDotData(show: true),
               belowBarData: BarAreaData(show: false),
+              barWidth: 1,
             ),
           ],
           lineTouchData:
-              LineTouchData(enabled: false), // Disable touch feedback
+              const LineTouchData(enabled: false), // Disable touch feedback
         ),
       ),
     );
