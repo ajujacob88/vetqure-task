@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
   Widget _getSelectedContent() {
     switch (selectedIndex) {
       case 0:
-        return const Dashboard(); // Dashboard view
+        return Dashboard(); // Dashboard view
       case 1:
         return const Center(child: Text('Calendar Content'));
       case 2:
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
       case 7:
         return const Center(child: Text('Logout Content'));
       default:
-        return const Dashboard();
+        return Dashboard();
     }
   }
 
@@ -70,7 +70,8 @@ class _HomePageState extends State<HomePage> {
           Container(
             width: screenWidth * 0.85,
             padding: const EdgeInsets.all(20),
-            color: Colors.white,
+            // color: const Color.fromARGB(31, 0, 0, 0),
+            color: Colors.redAccent,
             child: _getSelectedContent(), // Display selected content
           ),
         ],
@@ -82,6 +83,7 @@ class _HomePageState extends State<HomePage> {
 
 
 /*
+//no need
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
