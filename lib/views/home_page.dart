@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
           // Main content (85% of screen width)
           Container(
             width: screenWidth * 0.85,
-            padding: const EdgeInsets.all(20),
+            //padding: const EdgeInsets.all(20),
             // color: const Color.fromARGB(31, 0, 0, 0),
             color: Color.fromARGB(31, 149, 149, 149),
             child: _getSelectedContent(), // Display selected content
