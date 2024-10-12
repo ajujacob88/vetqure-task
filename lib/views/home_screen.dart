@@ -64,40 +64,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 const SizedBox(height: 20), // Top padding
-                // ElevatedButton(
-                //   onPressed: () {},
-                //   child: const Text('Dashboard'),
-                // ),
-                // ElevatedButton(
-                //   onPressed: () {},
-                //   child: const Text('Calender'),
-                // ),
-                // ElevatedButton(
-                //   onPressed: () {},
-                //   child: const Text('Client'),
-                // ),
-                // ElevatedButton(
-                //   onPressed: () {},
-                //   child: const Text('Profile'),
-                // ),
-                // ElevatedButton(
-                //   onPressed: () {},
-                //   child: const Text('Finance'),
-                // ),
-                // ElevatedButton(
-                //   onPressed: () {},
-                //   child: const Text('Inventory'),
-                // ),
-                // ElevatedButton(
-                //   onPressed: () {},
-                //   child: const Text('Order'),
-                // ),
-                // ElevatedButton(
-                //   onPressed: () {},
-                //   child: const Text('Logout'),
-                // ),
-
-                // Button list
 
                 ...buttons.asMap().entries.map(
                   (entry) {
@@ -124,8 +90,6 @@ class _HomePageState extends State<HomePage> {
                               ? Colors.white
                               : Colors.transparent, // Text and icon color
                           elevation: 0, //  remove shadow
-                          // padding: EdgeInsets.symmetric(
-                          // vertical: 16), // Adjust height of the button
 
                           // Define rounded corners
                           shape: RoundedRectangleBorder(
