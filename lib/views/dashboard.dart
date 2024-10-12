@@ -4,7 +4,7 @@ class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.transparent,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -12,7 +12,7 @@ class Dashboard extends StatelessWidget {
           Container(
             width: double.infinity,
             padding: const EdgeInsets.all(16.0),
-            color: Colors.grey[300], // Background color for title bar
+            color: Colors.white, // Background color for title bar
             child: Text(
               'Title',
               style: TextStyle(
@@ -29,14 +29,14 @@ class Dashboard extends StatelessWidget {
                 Expanded(
                   child: Container(
                     margin: EdgeInsets.all(8.0),
-                    color: Colors.grey[200],
+                    color: Colors.white,
                     child: Center(child: Text('Graph 1')),
                   ),
                 ),
                 Expanded(
                   child: Container(
                     margin: EdgeInsets.all(8.0),
-                    color: Colors.grey[200],
+                    color: Colors.white,
                     child: Center(child: Text('Graph 2')),
                   ),
                 ),
@@ -47,7 +47,7 @@ class Dashboard extends StatelessWidget {
           // Small graphs section
           Container(
             margin: EdgeInsets.symmetric(vertical: 8.0),
-            color: Colors.grey[200],
+            color: Colors.white,
             height: 100, // Adjust the height for smaller graphs
             child: Center(child: Text('Small Graphs Section')),
           ),
@@ -59,21 +59,21 @@ class Dashboard extends StatelessWidget {
                 Expanded(
                   child: Container(
                     margin: EdgeInsets.all(8.0),
-                    color: Colors.grey[200],
+                    color: Colors.white,
                     child: Center(child: Text('Graph 3')),
                   ),
                 ),
                 Expanded(
                   child: Container(
                     margin: EdgeInsets.all(8.0),
-                    color: Colors.grey[200],
+                    color: Colors.white,
                     child: Center(child: Text('Graph 4')),
                   ),
                 ),
                 Expanded(
                   child: Container(
                     margin: EdgeInsets.all(8.0),
-                    color: Colors.grey[200],
+                    color: Colors.white,
                     child: Center(child: Text('Graph 5')),
                   ),
                 ),
