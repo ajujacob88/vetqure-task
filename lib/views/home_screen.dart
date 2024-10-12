@@ -113,9 +113,6 @@ class _HomePageState extends State<HomePage> {
                       });
                     },
                     style: ElevatedButton.styleFrom(
-                      foregroundColor: isSelected
-                          ? Colors.white
-                          : Colors.transparent, // Button background color
                       backgroundColor: isSelected
                           ? Colors.white
                           : Colors.transparent, // Text and icon color
@@ -124,14 +121,18 @@ class _HomePageState extends State<HomePage> {
                     child: Row(
                       children: [
                         Icon(icon,
-                            color: isSelected ? Colors.blue : Colors.white),
-                        SizedBox(width: 10), // Space between icon and text
+                            color: isSelected
+                                ? const Color(0xFF00358C)
+                                : Colors.white),
+                        const SizedBox(
+                            width: 10), // Space between icon and text
                         Text(
                           label,
                           style: TextStyle(
-                              color: isSelected
-                                  ? Color.fromARGB(255, 10, 54, 21)
-                                  : const Color.fromARGB(255, 166, 10, 10)),
+                            color: isSelected
+                                ? const Color(0xFF00358C)
+                                : Colors.white,
+                          ),
                         ),
                       ],
                     ),
