@@ -20,8 +20,9 @@ class Dashboard extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                //const SizedBox(width: 10),
                 // Title on the left
-                Text(
+                const Text(
                   'Title',
                   style: TextStyle(
                     fontSize: 24.0,
@@ -33,16 +34,48 @@ class Dashboard extends StatelessWidget {
                   children: [
                     buildButtonWithIconText(
                         'Message', CupertinoIcons.chat_bubble_fill),
-                    const SizedBox(width: 8.0),
+                    const SizedBox(width: 18.0),
                     buildButtonWithIconText('Cart', CupertinoIcons.cart_fill),
-                    const SizedBox(width: 8.0),
+                    const SizedBox(width: 18.0),
                     buildButtonWithIconText(
-                        'Notifications', Icons.notifications),
-                    IconButton(
-                      icon: const Icon(Icons.logout),
-                      onPressed: () {
-                        // Handle button press
-                      },
+                        'Notification', Icons.notifications),
+                    //   const SizedBox(width: 5.0),
+                    const SizedBox(
+                      height: 34, // Set the height of the vertical divider
+                      child: VerticalDivider(
+                        width: 30, // Width between the buttons
+                        thickness: 1,
+                        color: Colors.black,
+                      ),
+                    ),
+                    // Logout Button with Profile, Name, and Down Arrow
+                    //  const SizedBox(width: 5.0),
+
+                    const Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 15,
+                          backgroundImage:
+                              AssetImage('assets/images/profile.jpg'),
+                        ),
+                        SizedBox(width: 8.0),
+
+                        Text(
+                          'Aju Jacob',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(width: 8.0),
+
+                        // Down arrow icon
+                        Icon(
+                          Icons.keyboard_arrow_down,
+                          color: Colors.black, // Icon color
+                        ),
+                        // SizedBox(width: 20),
+                      ],
                     ),
                   ],
                 ),

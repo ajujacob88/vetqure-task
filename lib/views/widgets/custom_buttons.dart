@@ -6,7 +6,11 @@ Widget buildButtonWithIconText(String label, IconData icon) {
     onPressed: () {
       // Handle button press
     },
-    icon: Icon(icon, color: Colors.black),
+    icon: Icon(
+      icon,
+      color: Colors.black,
+      size: 16,
+    ),
     label: Text(
       label,
       style: const TextStyle(color: Colors.black),
