@@ -21,6 +21,8 @@ class Dashboard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 //const SizedBox(width: 10),
+                const SizedBox(width: 16.0), // Adjust width as needed
+
                 // Title on the left
                 const Text(
                   'Title',
@@ -29,54 +31,50 @@ class Dashboard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                const Spacer(),
+
                 // Buttons on the right
-                Row(
+                buildButtonWithIconText(
+                    'Message', CupertinoIcons.chat_bubble_fill),
+                const SizedBox(width: 18.0),
+                buildButtonWithIconText('Cart', CupertinoIcons.cart_fill),
+                const SizedBox(width: 18.0),
+                buildButtonWithIconText('Notification', Icons.notifications),
+                //   const SizedBox(width: 5.0),
+                const SizedBox(
+                  height: 34, // Set the height of the vertical divider
+                  child: VerticalDivider(
+                    width: 30, // Width between the buttons
+                    thickness: 1,
+                    color: Colors.black,
+                  ),
+                ),
+                // Logout Button with Profile, Name, and Down Arrow
+                //  const SizedBox(width: 5.0),
+
+                const Row(
                   children: [
-                    buildButtonWithIconText(
-                        'Message', CupertinoIcons.chat_bubble_fill),
-                    const SizedBox(width: 18.0),
-                    buildButtonWithIconText('Cart', CupertinoIcons.cart_fill),
-                    const SizedBox(width: 18.0),
-                    buildButtonWithIconText(
-                        'Notification', Icons.notifications),
-                    //   const SizedBox(width: 5.0),
-                    const SizedBox(
-                      height: 34, // Set the height of the vertical divider
-                      child: VerticalDivider(
-                        width: 30, // Width between the buttons
-                        thickness: 1,
+                    CircleAvatar(
+                      radius: 15,
+                      backgroundImage: AssetImage('assets/images/profile.jpg'),
+                    ),
+                    SizedBox(width: 8.0),
+
+                    Text(
+                      'Aju Jacob',
+                      style: TextStyle(
                         color: Colors.black,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    // Logout Button with Profile, Name, and Down Arrow
-                    //  const SizedBox(width: 5.0),
+                    SizedBox(width: 8.0),
 
-                    const Row(
-                      children: [
-                        CircleAvatar(
-                          radius: 15,
-                          backgroundImage:
-                              AssetImage('assets/images/profile.jpg'),
-                        ),
-                        SizedBox(width: 8.0),
-
-                        Text(
-                          'Aju Jacob',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(width: 8.0),
-
-                        // Down arrow icon
-                        Icon(
-                          Icons.keyboard_arrow_down,
-                          color: Colors.black, // Icon color
-                        ),
-                        // SizedBox(width: 20),
-                      ],
+                    // Down arrow icon
+                    Icon(
+                      Icons.keyboard_arrow_down,
+                      color: Colors.black, // Icon color
                     ),
+                    SizedBox(width: 14.0),
                   ],
                 ),
               ],
