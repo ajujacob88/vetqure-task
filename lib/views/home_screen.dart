@@ -12,8 +12,8 @@ class _HomePageState extends State<HomePage> {
   int selectedIndex = 0;
   // Define the buttons with text and icons
   final List<Map<String, dynamic>> buttons = [
-    {'icon': Icons.dashboard, 'label': 'Dashboard'},
-    {'icon': Icons.calendar_today, 'label': 'Calendar'},
+    {'icon': Icons.view_comfy_alt, 'label': 'Dashboard'},
+    {'icon': Icons.calendar_month_sharp, 'label': 'Calendar'},
     {'icon': Icons.people, 'label': 'Client'},
     {'icon': Icons.person, 'label': 'Profile'},
     {'icon': Icons.attach_money, 'label': 'Finance'},
@@ -99,45 +99,58 @@ class _HomePageState extends State<HomePage> {
 
                 // Button list
 
-                ...buttons.asMap().entries.map((entry) {
-                  int index = entry.key;
-                  String label = entry.value['label'];
-                  IconData icon = entry.value['icon'];
+                ...buttons.asMap().entries.map(
+                  (entry) {
+                    int index = entry.key;
+                    String label = entry.value['label'];
+                    IconData icon = entry.value['icon'];
 
-                  bool isSelected = index == selectedIndex;
+                    bool isSelected = index == selectedIndex;
 
-                  return ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        selectedIndex = index;
-                      });
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: isSelected
-                          ? Colors.white
-                          : Colors.transparent, // Text and icon color
-                      elevation: 0, // Optional: remove shadow
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(icon,
-                            color: isSelected
-                                ? const Color(0xFF00358C)
-                                : Colors.white),
-                        const SizedBox(
-                            width: 10), // Space between icon and text
-                        Text(
-                          label,
-                          style: TextStyle(
-                            color: isSelected
-                                ? const Color(0xFF00358C)
-                                : Colors.white,
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8.0, horizontal: 25.0),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            selectedIndex = index;
+                          });
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: isSelected
+                              ? Colors.white
+                              : Colors.transparent, // Text and icon color
+                          elevation: 0, //  remove shadow
+                          // padding: EdgeInsets.symmetric(
+                          // vertical: 16), // Adjust height of the button
+
+                          // Define rounded corners
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5),
                           ),
                         ),
-                      ],
-                    ),
-                  );
-                }).toList(),
+                        child: Row(
+                          children: [
+                            Icon(icon,
+                                color: isSelected
+                                    ? const Color(0xFF00358C)
+                                    : Colors.white),
+                            const SizedBox(
+                                width: 10), // Space between icon and text
+                            Text(
+                              label,
+                              style: TextStyle(
+                                color: isSelected
+                                    ? const Color(0xFF00358C)
+                                    : Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
               ],
             ),
           ),
