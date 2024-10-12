@@ -108,8 +108,11 @@ class _HomePageState extends State<HomePage> {
                     bool isSelected = index == selectedIndex;
 
                     return Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 8.0, horizontal: 12.0),
+                      padding: label == 'Logout'
+                          ? const EdgeInsets.symmetric(
+                              vertical: 38.0, horizontal: 12.0)
+                          : const EdgeInsets.symmetric(
+                              vertical: 8.0, horizontal: 12.0),
                       child: ElevatedButton(
                         onPressed: () {
                           setState(() {
