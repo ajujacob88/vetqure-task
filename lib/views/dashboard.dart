@@ -67,7 +67,7 @@ class Dashboard extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    flex: 2,
+                    flex: 3,
                     child: Container(
                       margin: const EdgeInsets.fromLTRB(28, 8, 8, 8),
                       color: Colors.white,
@@ -75,6 +75,7 @@ class Dashboard extends StatelessWidget {
                     ),
                   ),
                   Expanded(
+                    flex: 2,
                     child: Container(
                       margin: const EdgeInsets.all(8.0),
                       color: Colors.white,
@@ -82,6 +83,7 @@ class Dashboard extends StatelessWidget {
                     ),
                   ),
                   Expanded(
+                    flex: 2,
                     child: Container(
                       margin: const EdgeInsets.fromLTRB(8, 8, 28, 8),
                       color: Colors.white,

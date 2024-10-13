@@ -14,7 +14,7 @@ class RevenueExpenseTracker extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const GraphHeader(title: 'Revenue vs Expense Tracker'),
-          const SizedBox(height: 20.0),
+          const SizedBox(height: 40.0),
           Expanded(child: RevenueExpenseChart()),
         ],
       ),
