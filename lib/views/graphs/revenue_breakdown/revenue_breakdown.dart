@@ -14,13 +14,18 @@ class RevenueBreakdown extends StatelessWidget {
     final RevenueController _controller = RevenueController();
 
     return Padding(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          //          Text('Revenue Breakdown'),
-
-          const GraphHeader(title: 'Revenue Breakdown'),
+          //const GraphHeader(title: 'Revenue Breakdown'),
+          const Text(
+            'Revenue Breakdown',
+            style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.normal,
+            ),
+          ),
           const SizedBox(height: 20.0),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
