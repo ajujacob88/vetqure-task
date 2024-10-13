@@ -48,17 +48,20 @@ class UserDemographicsPieChart extends StatelessWidget {
         ),
         const SizedBox(height: 20.0),
         // Legend section
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          //spacing: 6.0, // Add some spacing between legend items
+        Wrap(
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+          spacing: 16.0, // Add some spacing between legend items
           // direction: Axis.horizontal,
-          //alignment: WrapAlignment.center,
-          //runAlignment: WrapAlignment.end,
+          runSpacing: 4.0, // Space between rows of items (if they wrap)
+
+          alignment: WrapAlignment.start,
+          runAlignment: WrapAlignment.start,
           children: demographicsData.entries
               .map((entry) => LegendItem(
                     color: _getRandomColor(), // Use random color for legend too
-                    label:
-                        '${entry.key} (${((entry.value / total) * 100).toStringAsFixed(0)}%)',
+                    // label:
+                    //     '${entry.key} (${((entry.value / total) * 100).toStringAsFixed(0)}%)',
+                    label: '${entry.key} ',
                   ))
               .toList(),
         ),
