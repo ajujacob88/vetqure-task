@@ -15,56 +15,51 @@ class RevenuePieChartWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        // Add action when the pie chart button is tapped
-      },
-      child: SizedBox(
-        width: 100, // Adjust width and height as needed
-        height: 100,
+    return SizedBox(
+      width: 100, // Adjust width and height as needed
+      height: 100,
 
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            PieChart(
-              PieChartData(
-                  sections: [
-                    PieChartSectionData(
-                      value: percentage,
-                      color: activeColor, // Active color, e.g., blue for stock
-                      showTitle: false,
-                      radius: 15,
-                      // Start from the top and go clockwise
-                      titleStyle: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 18,
-                      ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          PieChart(
+            PieChartData(
+                sections: [
+                  PieChartSectionData(
+                    value: percentage,
+                    color: activeColor, // Active color, e.g., blue for stock
+                    showTitle: false,
+                    radius: 15,
+                    // Start from the top and go clockwise
+                    titleStyle: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.normal,
+                      fontSize: 18,
                     ),
-                    PieChartSectionData(
-                      value: 100 - percentage,
-                      color: Colors.grey, // Grey for remaining percentage
-                      showTitle: false,
-                      radius: 15,
-                    ),
-                  ],
-                  borderData: FlBorderData(show: false),
-                  centerSpaceRadius: 35, // Adjust space for center text
-                  startDegreeOffset:
-                      270, // Start drawing from the top (12 o'clock)
-                  sectionsSpace: 0),
+                  ),
+                  PieChartSectionData(
+                    value: 100 - percentage,
+                    color: Colors.grey, // Grey for remaining percentage
+                    showTitle: false,
+                    radius: 15,
+                  ),
+                ],
+                borderData: FlBorderData(show: false),
+                centerSpaceRadius: 35, // Adjust space for center text
+                startDegreeOffset:
+                    270, // Start drawing from the top (12 o'clock)
+                sectionsSpace: 0),
+          ),
+          // Display the percentage in the center
+          Text(
+            '${percentage.toStringAsFixed(0)}%', // Show percentage in center
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.normal,
+              color: Colors.black,
             ),
-            // Display the percentage in the center
-            Text(
-              '${percentage.toStringAsFixed(0)}%', // Show percentage in center
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.normal,
-                color: Colors.black,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
