@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:fl_chart/fl_chart.dart';
-import 'package:vetqure_task/views/graphs/graph_one/line_chart_widget.dart';
+import 'package:vetqure_task/views/graphs/client_graph/line_chart_widget.dart';
 import 'package:vetqure_task/views/widgets/graph_header.dart';
 import 'package:vetqure_task/views/widgets/walk_in_client_stats.dart';
 
-class GraphOne extends StatelessWidget {
-  const GraphOne({super.key});
+class ClientGraph extends StatelessWidget {
+  const ClientGraph({super.key});
 
   @override
   Widget build(BuildContext context) {

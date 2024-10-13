@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vetqure_task/views/graphs/graph_one/graph_one.dart';
+import 'package:vetqure_task/views/graphs/client_graph/client_graph.dart';
+import 'package:vetqure_task/views/graphs/demographics_chart.dart/user_demographics.dart';
 import 'package:vetqure_task/views/title_bar.dart';
 import 'package:vetqure_task/views/widgets/custom_buttons.dart';
 
@@ -30,7 +31,7 @@ class Dashboard extends StatelessWidget {
                       // margin: EdgeInsets.all(8.0),
                       margin: const EdgeInsets.fromLTRB(28, 8, 8, 8),
                       color: Colors.white,
-                      child: Center(child: GraphOne()),
+                      child: const Center(child: ClientGraph()),
                     ),
                   ),
                   Expanded(
@@ -38,7 +39,7 @@ class Dashboard extends StatelessWidget {
                     child: Container(
                       margin: const EdgeInsets.fromLTRB(8, 8, 28, 8),
                       color: Colors.white,
-                      child: const Center(child: Text('Graph 2')),
+                      child: const Center(child: UserDemographics()),
                     ),
                   ),
                 ],
