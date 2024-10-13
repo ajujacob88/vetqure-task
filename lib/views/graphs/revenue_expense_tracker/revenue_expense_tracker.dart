@@ -15,7 +15,7 @@ class RevenueExpenseTracker extends StatelessWidget {
         children: [
           const GraphHeader(title: 'Revenue vs Expense Tracker'),
           const SizedBox(height: 40.0),
-          Expanded(child: RevenueExpenseChart()),
+          Expanded(child: RevenueExpTrackerBarchart()),
         ],
       ),
     );

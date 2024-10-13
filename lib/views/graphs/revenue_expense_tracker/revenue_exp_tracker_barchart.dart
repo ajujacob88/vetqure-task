@@ -2,11 +2,11 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:vetqure_task/controllers/revenue_expense_tracker_controller.dart';
 
-class RevenueExpenseChart extends StatelessWidget {
-  final RevenueExpenseController _revenueExpenseController =
-      RevenueExpenseController();
+class RevenueExpTrackerBarchart extends StatelessWidget {
+  final RevenueExpenseTrackerController _revenueExpenseController =
+      RevenueExpenseTrackerController();
 
-  RevenueExpenseChart({super.key});
+  RevenueExpTrackerBarchart({super.key});
 
   @override
   Widget build(BuildContext context) {
