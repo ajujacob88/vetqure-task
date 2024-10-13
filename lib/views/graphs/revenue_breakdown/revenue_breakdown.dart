@@ -28,6 +28,7 @@ class RevenueBreakdown extends StatelessWidget {
             children: _controller.getRevenueItems().map((item) {
               double percentage = _controller.getItemPercentage(item.name);
               Color activeColor = _controller.getItemColor(item.name);
+              double revenue = item.amount;
               return Column(
                 children: [
                   RevenuePieChartWidget(
@@ -35,6 +36,7 @@ class RevenueBreakdown extends StatelessWidget {
                     //activeColor: Colors.blue,
                     activeColor: activeColor,
                     label: item.name,
+                    revenue: revenue,
                   ),
                 ],
               );

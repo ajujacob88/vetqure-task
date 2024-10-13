@@ -5,13 +5,14 @@ class RevenuePieChartWidget extends StatelessWidget {
   final double percentage; // Percentage value (0-100)
   final Color activeColor; // Color for the percentage segment
   final String label; // Label for the pie chart (optional)
+  final double revenue; //revenue for an item
 
-  const RevenuePieChartWidget({
-    super.key,
-    required this.percentage,
-    required this.activeColor,
-    required this.label,
-  });
+  const RevenuePieChartWidget(
+      {super.key,
+      required this.percentage,
+      required this.activeColor,
+      required this.label,
+      required this.revenue});
 
   @override
   Widget build(BuildContext context) {
@@ -71,9 +72,10 @@ class RevenuePieChartWidget extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              '20,000',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            Text(
+              //'$revenue',
+              '₹ ${revenue.toStringAsFixed(0)}',
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             Text(
               label,
