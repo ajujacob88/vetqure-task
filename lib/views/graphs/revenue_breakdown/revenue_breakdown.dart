@@ -14,14 +14,39 @@ class RevenueBreakdown extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          //          Text('Revenue Breakdown'),
+
           GraphHeader(title: 'Revenue Breakdown'),
           SizedBox(height: 20.0),
-          Expanded(
-            child: RevenuePieChartWidget(
-              percentage: 60,
-              activeColor: Colors.blue,
-              label: 'Medicine Stock',
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              RevenuePieChartWidget(
+                percentage: 60,
+                activeColor: Colors.blue,
+                label: 'Medicine Stock',
+              ),
+              RevenuePieChartWidget(
+                percentage: 30,
+                activeColor: Colors.green,
+                label: 'Medicine Stock',
+              ),
+              RevenuePieChartWidget(
+                percentage: 12,
+                activeColor: Colors.orange,
+                label: 'Medicine Stock',
+              ),
+              RevenuePieChartWidget(
+                percentage: 75,
+                activeColor: Colors.red,
+                label: 'Medicine Stock',
+              ),
+              RevenuePieChartWidget(
+                percentage: 8,
+                activeColor: Colors.yellow,
+                label: 'Medicine Stock',
+              ),
+            ],
           ),
         ],
       ),

@@ -22,10 +22,7 @@ class RevenuePieChartWidget extends StatelessWidget {
       child: SizedBox(
         width: 100, // Adjust width and height as needed
         height: 100,
-        // decoration: BoxDecoration(
-        //   border: Border.all(color: Colors.black, width: 2), // Button border
-        //   borderRadius: BorderRadius.circular(8),
-        // ),
+
         child: Stack(
           alignment: Alignment.center,
           children: [
