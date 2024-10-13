@@ -16,7 +16,7 @@ class RevenueExpenseChart extends StatelessWidget {
           alignment: BarChartAlignment.spaceAround,
           maxY: 50000, // The maximum value on the Y-axis
           barGroups: _buildBarGroups(), // Build the bars dynamically
-          gridData: FlGridData(show: false), // Remove grid lines
+          gridData: const FlGridData(show: false), // Remove grid lines
           borderData: FlBorderData(
             show: true,
             border: const Border(
@@ -27,39 +27,42 @@ class RevenueExpenseChart extends StatelessWidget {
             ),
           ), // Remove borders
           titlesData: FlTitlesData(
+            leftTitles: AxisTitles(
+              sideTitles: SideTitles(
+                showTitles: true,
+                reservedSize: 60,
+                interval: 10000,
+                getTitlesWidget: (double value, TitleMeta meta) {
+                  if (value % 10000 == 0) {
+                    return Text('₹ ${value.toInt()}');
+                  }
+                  return const SizedBox();
+                },
+              ),
+            ),
             bottomTitles: AxisTitles(
               sideTitles: SideTitles(
                 showTitles: true,
+                reservedSize: 40,
+                interval: 1,
                 getTitlesWidget: (double value, TitleMeta meta) {
                   const style = TextStyle(
                     color: Colors.black,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.normal,
                     fontSize: 14,
                   );
                   switch (value.toInt()) {
                     case 0:
-                      return Text('Revenue', style: style);
+                      return const Text('Revenue', style: style);
                     case 1:
-                      return Text('Expense', style: style);
+                      return const Text('Expense', style: style);
                     case 2:
-                      return Text('Miscellaneous', style: style);
+                      return const Text('Miscellaneous', style: style);
                     case 3:
-                      return Text('Other', style: style);
+                      return const Text('Other', style: style);
                     default:
                       return const Text('');
                   }
-                },
-              ),
-            ),
-            leftTitles: AxisTitles(
-              sideTitles: SideTitles(
-                showTitles: true,
-                interval: 10000,
-                getTitlesWidget: (double value, TitleMeta meta) {
-                  if (value % 10000 == 0) {
-                    return Text('₹${value.toInt()}');
-                  }
-                  return const SizedBox();
                 },
               ),
             ),

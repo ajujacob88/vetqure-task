@@ -62,7 +62,7 @@ class Dashboard extends StatelessWidget {
 
             // Bottom section with three graphs side by side
             SizedBox(
-              height: 300, // Fixed height for the graph section
+              height: 400, // Fixed height for the graph section
 
               child: Row(
                 children: [
