@@ -4,6 +4,7 @@ import 'package:vetqure_task/views/graphs/client_graph/client_graph.dart';
 import 'package:vetqure_task/views/graphs/demographics_chart/user_demographics.dart';
 import 'package:vetqure_task/views/graphs/revenue_breakdown/revenue_breakdown.dart';
 import 'package:vetqure_task/views/graphs/revenue_expense_tracker/revenue_expense_tracker.dart';
+import 'package:vetqure_task/views/orders/recent_orders.dart';
 import 'package:vetqure_task/views/title_bar.dart';
 import 'package:vetqure_task/views/widgets/custom_buttons.dart';
 
@@ -77,10 +78,11 @@ class Dashboard extends StatelessWidget {
                   Expanded(
                     flex: 2,
                     child: Container(
-                      margin: const EdgeInsets.all(8.0),
-                      color: Colors.white,
-                      child: Center(child: Text('Graph 4')),
-                    ),
+                        margin: const EdgeInsets.all(8.0),
+                        color: Colors.white,
+                        child: const Center(
+                          child: RecentOrders(),
+                        )),
                   ),
                   Expanded(
                     flex: 2,
