@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vetqure_task/controllers/revenue_controller.dart';
+import 'package:vetqure_task/models/revenue_model.dart';
 import 'package:vetqure_task/views/graphs/demographics_chart.dart/pie_chart_widget.dart';
 import 'package:vetqure_task/views/graphs/revenue_breakdown/revenue_pie_chart_widget.dart';
 import 'package:vetqure_task/views/widgets/graph_header.dart';
@@ -26,11 +27,13 @@ class RevenueBreakdown extends StatelessWidget {
 
             children: _controller.getRevenueItems().map((item) {
               double percentage = _controller.getItemPercentage(item.name);
+              Color activeColor = _controller.getItemColor(item.name);
               return Column(
                 children: [
                   RevenuePieChartWidget(
                     percentage: percentage,
-                    activeColor: Colors.blue,
+                    //activeColor: Colors.blue,
+                    activeColor: activeColor,
                     label: item.name,
                   ),
                 ],
