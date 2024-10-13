@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:vetqure_task/controllers/revenue_expense_tracker_controller.dart';
 
 class RevenueExpenseChart extends StatelessWidget {
-  final RevenueExpenseController controller = RevenueExpenseController();
+  final RevenueExpenseController _revenueExpenseController =
+      RevenueExpenseController();
 
   RevenueExpenseChart({super.key});
 
@@ -77,14 +78,21 @@ class RevenueExpenseChart extends StatelessWidget {
 
   // Function to dynamically generate bar groups based on the items
   List<BarChartGroupData> _buildBarGroups() {
-    return List.generate(controller.items.length, (index) {
-      final item = controller.items[index];
+    List<Color> barColors = [
+      const Color.fromARGB(255, 12, 138, 16), // For Revenue
+      const Color.fromARGB(255, 167, 35, 26), // For Expense
+      const Color.fromARGB(255, 144, 92, 16), // For Miscellaneous
+      const Color.fromARGB(255, 23, 98, 163), // For Other
+    ];
+
+    return List.generate(_revenueExpenseController.items.length, (index) {
+      final item = _revenueExpenseController.items[index];
       return BarChartGroupData(
         x: index,
         barRods: [
           BarChartRodData(
               toY: item.amount, // Set the height of each bar
-              color: Colors.blue, // You can use different colors for each bar
+              color: barColors[index],
               width: 50,
               borderRadius: BorderRadius.zero),
         ],
