@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vetqure_task/views/graphs/demographics_chart.dart/pie_chart_widget.dart';
+import 'package:vetqure_task/views/graphs/demographics_chart/pie_chart_widget.dart';
 import 'package:vetqure_task/views/widgets/graph_header.dart';
 
 class UserDemographics extends StatelessWidget {

@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vetqure_task/views/graphs/client_graph/client_graph.dart';
-import 'package:vetqure_task/views/graphs/demographics_chart.dart/user_demographics.dart';
+import 'package:vetqure_task/views/graphs/demographics_chart/user_demographics.dart';
 import 'package:vetqure_task/views/graphs/revenue_breakdown/revenue_breakdown.dart';
+import 'package:vetqure_task/views/graphs/revenue_expense_tracker/revenue_expense_tracker.dart';
 import 'package:vetqure_task/views/title_bar.dart';
 import 'package:vetqure_task/views/widgets/custom_buttons.dart';
 
@@ -66,10 +67,11 @@ class Dashboard extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
+                    flex: 2,
                     child: Container(
                       margin: const EdgeInsets.fromLTRB(28, 8, 8, 8),
                       color: Colors.white,
-                      child: const Center(child: Text('Graph 3')),
+                      child: const Center(child: RevenueExpenseTracker()),
                     ),
                   ),
                   Expanded(
