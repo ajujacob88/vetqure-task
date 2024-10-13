@@ -5,6 +5,7 @@ import 'package:vetqure_task/views/graphs/demographics_chart/user_demographics.d
 import 'package:vetqure_task/views/graphs/revenue_breakdown/revenue_breakdown.dart';
 import 'package:vetqure_task/views/graphs/revenue_expense_tracker/revenue_expense_tracker.dart';
 import 'package:vetqure_task/views/orders/recent_orders.dart';
+import 'package:vetqure_task/views/staff%20/staff_availability.dart';
 import 'package:vetqure_task/views/title_bar.dart';
 import 'package:vetqure_task/views/widgets/custom_buttons.dart';
 
@@ -89,7 +90,7 @@ class Dashboard extends StatelessWidget {
                     child: Container(
                       margin: const EdgeInsets.fromLTRB(8, 8, 28, 8),
                       color: Colors.white,
-                      child: const Center(child: Text('Graph 5')),
+                      child: const Center(child: StaffAvailability()),
                     ),
                   ),
                 ],
