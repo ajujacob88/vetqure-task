@@ -11,7 +11,7 @@ class RevenueBreakdown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final RevenueController _controller = RevenueController();
+    final RevenueController revenueController = RevenueController();
 
     return Padding(
       padding: const EdgeInsets.all(16.0),
@@ -29,9 +29,10 @@ class RevenueBreakdown extends StatelessWidget {
           const SizedBox(height: 20.0),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: _controller.getRevenueItems().map((item) {
-              double percentage = _controller.getItemPercentage(item.name);
-              Color activeColor = _controller.getItemColor(item.name);
+            children: revenueController.getRevenueItems().map((item) {
+              double percentage =
+                  revenueController.getItemPercentage(item.name);
+              Color activeColor = revenueController.getItemColor(item.name);
               double revenue = item.amount;
               return Column(
                 children: [
