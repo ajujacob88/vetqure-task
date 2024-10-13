@@ -33,8 +33,8 @@ class UserDemographicsPieChart extends StatelessWidget {
                         radius: 130,
                         titleStyle: const TextStyle(
                           color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          fontSize: 20,
                         ),
                         showTitle: true,
                       ),
@@ -42,6 +42,7 @@ class UserDemographicsPieChart extends StatelessWidget {
                     .toList(),
                 borderData: FlBorderData(show: false),
                 centerSpaceRadius: 0,
+                // sectionsSpace: 0,
               ),
             ),
           ),
