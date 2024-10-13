@@ -18,6 +18,7 @@ class Dashboard extends StatelessWidget {
           const TitleBar(),
           // Section with two side-by-side graphs
           Expanded(
+            flex: 6,
             child: Row(
               children: [
                 Expanded(

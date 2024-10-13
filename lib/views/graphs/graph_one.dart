@@ -1,110 +1,3 @@
-/*
-import 'package:flutter/material.dart';
-import 'package:fl_chart/fl_chart.dart';
-
-class GraphOne extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: LineChart(
-        LineChartData(
-          gridData: const FlGridData(
-            show: false,
-            // horizontalInterval:
-            //     10, // Show grid lines for y-axis at 10, 20, 30, etc.
-            // verticalInterval:
-            //     1, // Show grid lines for x-axis between time intervals
-          ),
-          titlesData: FlTitlesData(
-            leftTitles: AxisTitles(
-              sideTitles: SideTitles(
-                showTitles: true,
-                reservedSize: 40,
-                interval: 10, // Show 10, 20, 30, 40, 50
-                getTitlesWidget: (value, meta) {
-                  switch (value.toInt()) {
-                    case 10:
-                      return const Text('10');
-                    case 20:
-                      return const Text('20');
-                    case 30:
-                      return const Text('30');
-                    case 40:
-                      return const Text('40');
-                    case 50:
-                      return const Text('50');
-                    default:
-                      return const SizedBox();
-                  }
-                },
-              ),
-            ),
-            bottomTitles: AxisTitles(
-              sideTitles: SideTitles(
-                showTitles: true,
-                reservedSize: 40,
-                getTitlesWidget: (value, meta) {
-                  switch (value.toInt()) {
-                    case 0:
-                      return const Text('9-10 AM');
-                    case 1:
-                      return const Text('10-11 AM');
-                    case 2:
-                      return const Text('11-12 PM');
-                    case 3:
-                      return const Text('12-1 PM');
-                    case 4:
-                      return const Text('1-2 PM');
-                    case 5:
-                      return const Text('2-3 PM');
-                    default:
-                      return const SizedBox();
-                  }
-                },
-              ),
-            ),
-            topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
-            rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
-          ),
-          borderData: FlBorderData(
-            show: true,
-            border: const Border(
-              left: BorderSide(color: Colors.black),
-              bottom: BorderSide(color: Colors.black),
-              right: BorderSide(color: Colors.transparent),
-              top: BorderSide(color: Colors.transparent),
-            ),
-          ),
-          minX: 0,
-          maxX: 5,
-          minY: 0,
-          maxY: 50,
-          lineBarsData: [
-            LineChartBarData(
-              spots: [
-                FlSpot(0, 10),
-                FlSpot(1, 20),
-                FlSpot(2, 30),
-                FlSpot(3, 40),
-                FlSpot(4, 50),
-                FlSpot(5, 30),
-              ],
-              isCurved: true,
-              color: Colors.blue,
-              dotData: FlDotData(show: false),
-              belowBarData: BarAreaData(show: false),
-            ),
-          ],
-          lineTouchData: LineTouchData(enabled: false),
-        ),
-      ),
-    );
-  }
-}
-
-*/
-
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
@@ -278,7 +171,7 @@ class GraphOne extends StatelessWidget {
             ],
           ),
 
-          const SizedBox(height: 20.0),
+          const SizedBox(height: 40.0),
           Expanded(
             child: LineChart(
               LineChartData(
@@ -294,22 +187,6 @@ class GraphOne extends StatelessWidget {
                       getTitlesWidget: (value, meta) {
                         return Text(value.toInt().toString());
                       },
-                      // getTitlesWidget: (value, meta) {
-                      //   switch (value.toInt()) {
-                      //     case 10:
-                      //       return const Text('10');
-                      //     case 20:
-                      //       return const Text('20');
-                      //     case 30:
-                      //       return const Text('30');
-                      //     case 40:
-                      //       return const Text('40');
-                      //     case 50:
-                      //       return const Text('50');
-                      //     default:
-                      //       return const SizedBox();
-                      //   }
-                      // },
                     ),
                   ),
                   bottomTitles: AxisTitles(
@@ -347,10 +224,10 @@ class GraphOne extends StatelessWidget {
                       },
                     ),
                   ),
-                  topTitles:
-                      AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                  rightTitles:
-                      AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                  topTitles: const AxisTitles(
+                      sideTitles: SideTitles(showTitles: false)),
+                  rightTitles: const AxisTitles(
+                      sideTitles: SideTitles(showTitles: false)),
                 ),
                 borderData: FlBorderData(
                   show: true,
