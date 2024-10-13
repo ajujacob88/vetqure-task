@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:vetqure_task/controllers/revenue_expense_tracker_controller.dart';
 
 class RevenueExpTrackerBarchart extends StatelessWidget {
@@ -10,6 +11,8 @@ class RevenueExpTrackerBarchart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final NumberFormat currencyFormat = NumberFormat('#,##0');
+
     return BarChart(
       BarChartData(
         alignment: BarChartAlignment.spaceAround,
@@ -22,11 +25,13 @@ class RevenueExpTrackerBarchart extends StatelessWidget {
           leftTitles: AxisTitles(
             sideTitles: SideTitles(
               showTitles: true,
-              reservedSize: 60,
+              reservedSize: 65,
               interval: 10000,
               getTitlesWidget: (double value, TitleMeta meta) {
                 if (value % 10000 == 0) {
-                  return Text('₹ ${value.toInt()}');
+                  // return Text('₹ ${value.toInt()}');
+                  return Text(
+                      '₹ ${currencyFormat.format(value.toInt())}'); //format with commas
                 }
                 return const SizedBox();
               },

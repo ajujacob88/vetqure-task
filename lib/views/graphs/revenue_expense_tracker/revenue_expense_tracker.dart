@@ -11,9 +11,6 @@ class RevenueExpenseTracker extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // const GraphHeader(
-          //   title: 'Revenue vs Expense Tracker',
-          // ),
           const Text(
             'Revenue vs Expense Tracker',
             style: TextStyle(
