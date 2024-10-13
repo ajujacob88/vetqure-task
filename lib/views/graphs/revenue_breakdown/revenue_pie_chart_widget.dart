@@ -15,52 +15,73 @@ class RevenuePieChartWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 100, // Adjust width and height as needed
-      height: 100,
+    return Row(
+      children: [
+        SizedBox(
+          width: 100, // Adjust width and height as needed
+          height: 100,
 
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          PieChart(
-            PieChartData(
-                sections: [
-                  PieChartSectionData(
-                    value: percentage,
-                    color: activeColor, // Active color, e.g., blue for stock
-                    showTitle: false,
-                    radius: 15,
-                    // Start from the top and go clockwise
-                    titleStyle: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.normal,
-                      fontSize: 18,
-                    ),
-                  ),
-                  PieChartSectionData(
-                    value: 100 - percentage,
-                    color: Colors.grey, // Grey for remaining percentage
-                    showTitle: false,
-                    radius: 15,
-                  ),
-                ],
-                borderData: FlBorderData(show: false),
-                centerSpaceRadius: 35, // Adjust space for center text
-                startDegreeOffset:
-                    270, // Start drawing from the top (12 o'clock)
-                sectionsSpace: 0),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              PieChart(
+                PieChartData(
+                    sections: [
+                      PieChartSectionData(
+                        value: percentage,
+                        color:
+                            activeColor, // Active color, e.g., blue for stock
+                        showTitle: false,
+                        radius: 15,
+                        // Start from the top and go clockwise
+                        titleStyle: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.normal,
+                          fontSize: 18,
+                        ),
+                      ),
+                      PieChartSectionData(
+                        value: 100 - percentage,
+                        color: Colors.grey, // Grey for remaining percentage
+                        showTitle: false,
+                        radius: 15,
+                      ),
+                    ],
+                    borderData: FlBorderData(show: false),
+                    centerSpaceRadius: 35, // Adjust space for center text
+                    startDegreeOffset:
+                        270, // Start drawing from the top (12 o'clock)
+                    sectionsSpace: 0),
+              ),
+              // Display the percentage in the center
+              Text(
+                '${percentage.toStringAsFixed(0)}%', // Show percentage in center
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.black,
+                ),
+              ),
+            ],
           ),
-          // Display the percentage in the center
-          Text(
-            '${percentage.toStringAsFixed(0)}%', // Show percentage in center
-            style: const TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.normal,
-              color: Colors.black,
+        ),
+        SizedBox(
+          width: 10,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              '20,000',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-          ),
-        ],
-      ),
+            Text(
+              label,
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
