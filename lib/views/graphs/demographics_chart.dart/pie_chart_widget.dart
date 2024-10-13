@@ -12,6 +12,11 @@ class UserDemographicsPieChart extends StatelessWidget {
     // Calculate total value for percentage calculation
     double total = demographicsData.values.reduce((a, b) => a + b);
 
+    // Generate colors for each entry and store them in a map
+    final Map<String, Color> colors = Map.fromEntries(
+      demographicsData.keys.map((key) => MapEntry(key, _getRandomColor())),
+    );
+
     return Column(
       // mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -26,8 +31,7 @@ class UserDemographicsPieChart extends StatelessWidget {
                     .map(
                       (entry) => PieChartSectionData(
                         value: entry.value,
-                        color:
-                            _getRandomColor(), // Get random color for each slice
+                        color: colors[entry.key]!, // Use predefined color
                         title:
                             '${((entry.value / total) * 100).toStringAsFixed(0)}%', // Display percentage
                         radius: 130,
@@ -61,7 +65,7 @@ class UserDemographicsPieChart extends StatelessWidget {
             children: demographicsData.entries
                 .map((entry) => LegendItem(
                       color:
-                          _getRandomColor(), // Use random color for legend too
+                          colors[entry.key]!, // Use the same predefined color
                       // label:
                       //     '${entry.key} (${((entry.value / total) * 100).toStringAsFixed(0)}%)',
                       label: '${entry.key} ',
