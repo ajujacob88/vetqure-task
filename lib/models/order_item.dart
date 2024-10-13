@@ -32,13 +32,13 @@ class OrderModel {
       orderId: 'ORD1037',
       date: '12-10-2024',
       imageUrl: 'assets/images/order_images/3.png',
-      status: 'Return',
+      status: 'Pending',
     ),
     OrderItem(
       orderId: 'ORD1036',
       date: '12-10-2024',
       imageUrl: 'assets/images/order_images/4.png',
-      status: 'Pending',
+      status: 'Return',
     ),
     OrderItem(
       orderId: 'ORD1035',

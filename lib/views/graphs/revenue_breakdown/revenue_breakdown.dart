@@ -23,7 +23,7 @@ class RevenueBreakdown extends StatelessWidget {
             'Revenue Breakdown',
             style: TextStyle(
               fontSize: 16.0,
-              fontWeight: FontWeight.normal,
+              fontWeight: FontWeight.bold,
             ),
           ),
           const SizedBox(height: 20.0),
