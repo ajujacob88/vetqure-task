@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vetqure_task/views/graphs/client_graph/client_graph.dart';
 import 'package:vetqure_task/views/graphs/demographics_chart.dart/user_demographics.dart';
+import 'package:vetqure_task/views/graphs/revenue_breakdown/revenue_breakdown.dart';
 import 'package:vetqure_task/views/title_bar.dart';
 import 'package:vetqure_task/views/widgets/custom_buttons.dart';
 
@@ -47,11 +48,15 @@ class Dashboard extends StatelessWidget {
             ),
 
             // Small graphs section
-            Container(
-              margin: const EdgeInsets.fromLTRB(28, 8, 28, 8),
-              color: Colors.white,
-              height: 100, // Adjust the height for smaller graphs
-              child: const Center(child: Text('Small Graphs Section')),
+            SizedBox(
+              height: 200, // Fixed height for the graph section
+
+              child: Container(
+                margin: const EdgeInsets.fromLTRB(28, 8, 28, 8),
+                color: Colors.white,
+                height: 100, // Adjust the height for smaller graphs
+                child: const Center(child: RevenueBreakdown()),
+              ),
             ),
 
             // Bottom section with three graphs side by side
