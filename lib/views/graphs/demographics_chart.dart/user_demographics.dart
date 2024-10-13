@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vetqure_task/views/graphs/client_graph/line_chart_widget.dart';
 import 'package:vetqure_task/views/graphs/demographics_chart.dart/pie_chart_widget.dart';
 import 'package:vetqure_task/views/widgets/graph_header.dart';
-import 'package:vetqure_task/views/widgets/walk_in_client_stats.dart';
 
 class UserDemographics extends StatelessWidget {
   const UserDemographics({super.key});
@@ -18,11 +16,13 @@ class UserDemographics extends StatelessWidget {
           SizedBox(height: 20.0),
           Expanded(
             child: UserDemographicsPieChart(
+              // Mention the walkin count, percentage will be automatically calculated
               demographicsData: {
-                'Kochi': 50,
-                'Kottayam': 30,
-                'Calicut': 20,
-                'Tvm': 20,
+                'Pattom': 100,
+                'Thampanoor': 100,
+                'Kowdiar': 200,
+                'Palayam': 100,
+                //'Perorkada': 10,
               },
             ),
           ),
