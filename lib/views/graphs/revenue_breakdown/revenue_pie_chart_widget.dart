@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class RevenuePieChartWidget extends StatelessWidget {
   final double percentage; // Percentage value (0-100)
@@ -16,6 +17,8 @@ class RevenuePieChartWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Create a NumberFormat instance to format numbers with commas
+    final NumberFormat currencyFormat = NumberFormat('#,##0');
     return Row(
       children: [
         SizedBox(
@@ -74,7 +77,9 @@ class RevenuePieChartWidget extends StatelessWidget {
           children: [
             Text(
               //'$revenue',
-              '₹ ${revenue.toStringAsFixed(0)}',
+              // '₹ ${revenue.toStringAsFixed(0)}',
+              '₹ ${currencyFormat.format(revenue)}', // Format with commas
+
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             Text(
