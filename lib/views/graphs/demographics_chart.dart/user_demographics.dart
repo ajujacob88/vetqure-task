@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vetqure_task/views/graphs/client_graph/line_chart_widget.dart';
+import 'package:vetqure_task/views/graphs/demographics_chart.dart/pie_chart_widget.dart';
 import 'package:vetqure_task/views/widgets/graph_header.dart';
 import 'package:vetqure_task/views/widgets/walk_in_client_stats.dart';
 
@@ -17,12 +18,12 @@ class UserDemographics extends StatelessWidget {
           GraphHeader(title: 'User Demographics'),
           SizedBox(height: 20.0),
 
-          // Second row with Total Walking and New Client data
-          WalkInClientStats(),
-          SizedBox(height: 40.0),
+          // // Second row with Total Walking and New Client data
+          // WalkInClientStats(),
+          // SizedBox(height: 40.0),
 
           //Third row consists of line chart
-          Expanded(child: LineChartWidget()),
+          Expanded(child: PieChartWidget()),
         ],
       ),
     );
