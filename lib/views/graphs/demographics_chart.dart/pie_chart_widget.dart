@@ -91,6 +91,8 @@ class LegendItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisSize: MainAxisSize.min, // Make sure the Row takes minimal space
+
       children: [
         Container(
           width: 16,
