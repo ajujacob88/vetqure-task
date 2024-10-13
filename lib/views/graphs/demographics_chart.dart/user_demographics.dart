@@ -14,16 +14,18 @@ class UserDemographics extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // First row with 'Walk in Client' and Filter button
           GraphHeader(title: 'User Demographics'),
           SizedBox(height: 20.0),
-
-          // // Second row with Total Walking and New Client data
-          // WalkInClientStats(),
-          // SizedBox(height: 40.0),
-
-          //Third row consists of line chart
-          Expanded(child: PieChartWidget()),
+          Expanded(
+            child: UserDemographicsPieChart(
+              demographicsData: {
+                'Kochi': 50,
+                'Kottayam': 30,
+                'Calicut': 20,
+                'Tvm': 20,
+              },
+            ),
+          ),
         ],
       ),
     );

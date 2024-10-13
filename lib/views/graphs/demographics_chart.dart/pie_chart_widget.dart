@@ -1,3 +1,107 @@
+import 'dart:math';
+import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/material.dart';
+
+class UserDemographicsPieChart extends StatelessWidget {
+  final Map<String, double> demographicsData; // Accept demographics data
+
+  const UserDemographicsPieChart({super.key, required this.demographicsData});
+
+  @override
+  Widget build(BuildContext context) {
+    // Calculate total value for percentage calculation
+    double total = demographicsData.values.reduce((a, b) => a + b);
+
+    return Column(
+      // mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        SizedBox(
+          height: 250, // Fixed height for the pie chart
+
+          child: AspectRatio(
+            aspectRatio: 1,
+            child: PieChart(
+              PieChartData(
+                sections: demographicsData.entries
+                    .map(
+                      (entry) => PieChartSectionData(
+                        value: entry.value,
+                        color:
+                            _getRandomColor(), // Get random color for each slice
+                        title:
+                            '${((entry.value / total) * 100).toStringAsFixed(0)}%', // Display percentage
+                        radius: 130,
+                        titleStyle: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                        ),
+                        showTitle: true,
+                      ),
+                    )
+                    .toList(),
+                borderData: FlBorderData(show: false),
+                centerSpaceRadius: 0,
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 20.0),
+        // Legend section
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //spacing: 6.0, // Add some spacing between legend items
+          // direction: Axis.horizontal,
+          //alignment: WrapAlignment.center,
+          //runAlignment: WrapAlignment.end,
+          children: demographicsData.entries
+              .map((entry) => LegendItem(
+                    color: _getRandomColor(), // Use random color for legend too
+                    label:
+                        '${entry.key} (${((entry.value / total) * 100).toStringAsFixed(0)}%)',
+                  ))
+              .toList(),
+        ),
+      ],
+    );
+  }
+
+  // Function to get a random color
+  Color _getRandomColor() {
+    final Random random = Random();
+    return Color.fromARGB(
+      255, // Alpha
+      random.nextInt(256), // Red
+      random.nextInt(256), // Green
+      random.nextInt(256), // Blue
+    );
+  }
+}
+
+class LegendItem extends StatelessWidget {
+  final Color color;
+  final String label;
+
+  const LegendItem({Key? key, required this.color, required this.label})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          width: 16,
+          height: 16,
+          color: color, // Color box for the legend
+        ),
+        const SizedBox(width: 8), // Space between color box and label
+        Text(label),
+      ],
+    );
+  }
+}
+
+/*
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -57,7 +161,7 @@ class PieChartWidget extends StatelessWidget {
     );
   }
 }
-
+*/
 
 /*
 import 'package:fl_chart/fl_chart.dart';
