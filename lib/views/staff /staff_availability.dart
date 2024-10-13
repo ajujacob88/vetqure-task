@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:vetqure_task/views/orders/recent_orders_widget.dart';
+import 'package:vetqure_task/views/staff%20/staff_availability_widget.dart';
 
 class StaffAvailability extends StatelessWidget {
   const StaffAvailability({super.key});
@@ -19,7 +20,7 @@ class StaffAvailability extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10.0),
-          Expanded(child: RecentOrdersWidget()),
+          Expanded(child: StaffAvailabilityWidget()),
         ],
       ),
     );
