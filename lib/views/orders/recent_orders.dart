@@ -19,7 +19,7 @@ class RecentOrders extends StatelessWidget {
               fontWeight: FontWeight.normal,
             ),
           ),
-          const SizedBox(height: 40.0),
+          const SizedBox(height: 10.0),
           Expanded(child: RecentOrdersWidget()),
         ],
       ),

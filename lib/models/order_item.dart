@@ -19,7 +19,8 @@ class OrderModel {
     OrderItem(
       orderId: 'ORD001',
       date: '2024-10-01',
-      imageUrl: 'https://via.placeholder.com/50',
+      imageUrl:
+          'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.petsy.online%2Fproducts%2Fhimalaya-healthy-pet-food-puppy-chicken-rice&psig=AOvVaw14S0MPd8K03R7Fu0mBpPnY&ust=1728929510876000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwiwhvy7-ouJAxUtcWwGHVIeDCMQjRx6BAgAEBk',
       status: 'Pending',
     ),
     OrderItem(
