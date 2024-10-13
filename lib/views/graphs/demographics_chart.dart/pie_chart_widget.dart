@@ -51,7 +51,7 @@ class PieChartWidget extends StatelessWidget {
           //   border: Border.all(color: Colors.red, width: 10),
           // ),
           centerSpaceRadius: 0, // Remove center space for full circle effect
-          sectionsSpace: 2,
+          sectionsSpace: 0, //Remove space between slices
         ),
       ),
     );
