@@ -65,7 +65,7 @@ class RevenuePieChartWidget extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         Column(
@@ -77,7 +77,8 @@ class RevenuePieChartWidget extends StatelessWidget {
             ),
             Text(
               label,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+              style:
+                  const TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
             ),
           ],
         ),
