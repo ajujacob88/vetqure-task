@@ -16,7 +16,7 @@ class UserDemographicsPieChart extends StatelessWidget {
       // mainAxisAlignment: MainAxisAlignment.start,
       children: [
         SizedBox(
-          height: 250, // Fixed height for the pie chart
+          height: 300, // Fixed height for the pie chart
 
           child: AspectRatio(
             aspectRatio: 1,
