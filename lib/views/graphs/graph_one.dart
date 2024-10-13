@@ -125,19 +125,32 @@ class GraphOne extends StatelessWidget {
               const Text(
                 'Walk in Client',
                 style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.normal,
                 ),
               ),
               ElevatedButton.icon(
                 onPressed: () {
                   // Add filter functionality here
                 },
-                icon: const Icon(Icons.filter_list),
-                label: const Text('Filter'),
+                icon: const Icon(
+                  Icons.filter_alt_outlined,
+                  color: Color(0xFF00358C),
+                  size: 21,
+                ),
+                label: const Text(
+                  'Filter',
+                  style: TextStyle(fontSize: 16, color: Color(0xFF00358C)),
+                ),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 16.0, vertical: 12.0),
+                      horizontal: 8.0, vertical: 1.0),
+                  backgroundColor: Colors.white,
+                  // foregroundColor: Colors.transparent,
+                  side: const BorderSide(color: Color(0xFF00358C)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0), // Rounded corners
+                  ),
                 ),
               ),
             ],
@@ -146,29 +159,31 @@ class GraphOne extends StatelessWidget {
 
           // Second row with Total Walking and New Client data
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               // Total Walking section
-              Column(
+              const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    '120 km', // Total walking count
+                  Text(
+                    '20', // Total walking count
                     style: TextStyle(
-                      fontSize: 28.0,
+                      fontSize: 24.0,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
                   ),
-                  const Text(
-                    'Total Walking',
+                  Text(
+                    'Total Walk In',
                     style: TextStyle(
-                      fontSize: 16.0,
+                      fontSize: 14.0,
                       color: Colors.grey,
                     ),
                   ),
                 ],
               ),
+
+              const SizedBox(width: 40.0),
 
               // New Client section
               Column(
@@ -177,9 +192,9 @@ class GraphOne extends StatelessWidget {
                   Row(
                     children: [
                       const Text(
-                        '34', // New client count
+                        '30', // New client count
                         style: TextStyle(
-                          fontSize: 28.0,
+                          fontSize: 24.0,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
@@ -208,7 +223,53 @@ class GraphOne extends StatelessWidget {
                   const Text(
                     'New Client',
                     style: TextStyle(
-                      fontSize: 16.0,
+                      fontSize: 14.0,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(width: 50.0),
+              // Existing Client section
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      const Text(
+                        '20', // Existing client count
+                        style: TextStyle(
+                          fontSize: 24.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                      const SizedBox(width: 8.0),
+                      // Arrow and percentage change
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.arrow_downward,
+                            color: Colors.red[700], // Up arrow color
+                            size: 20.0,
+                          ),
+                          const Text(
+                            '12%', // Percentage change
+                            style: TextStyle(
+                              fontSize: 16.0,
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const Text(
+                    'Existing Client',
+                    style: TextStyle(
+                      fontSize: 14.0,
                       color: Colors.grey,
                     ),
                   ),
