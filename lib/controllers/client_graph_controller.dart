@@ -7,4 +7,10 @@ class ClientGraphController {
   List<WalkInClientData> getWalkInClientData() {
     return _model.getWalkInClientData();
   }
+
+  // Calculate total walk-ins from the data
+  int getTotalWalkIn() {
+    final data = getWalkInClientData();
+    return data.fold(0, (sum, item) => sum + item.walkInCount.toInt());
+  }
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class WalkInClientStats extends StatelessWidget {
-  const WalkInClientStats({super.key});
+  const WalkInClientStats({super.key, required this.totalWalkIn});
+  final int totalWalkIn;
 
   @override
   Widget build(BuildContext context) {
@@ -9,18 +10,18 @@ class WalkInClientStats extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         // Total Walking section
-        const Column(
+        Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              '20', // Total walking count
-              style: TextStyle(
+              '$totalWalkIn', // Total walking count
+              style: const TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
             ),
-            Text(
+            const Text(
               'Total Walk In',
               style: TextStyle(
                 fontSize: 14.0,
