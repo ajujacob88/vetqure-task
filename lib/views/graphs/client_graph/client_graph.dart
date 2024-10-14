@@ -14,6 +14,8 @@ class ClientGraph extends StatelessWidget {
 
     // Calculate the total walk-ins
     final int totalWalkIn = controller.getTotalWalkIn();
+    final int totalNewClients = controller.getTotalNewClients();
+    final int totalExistingClients = controller.getTotalExistingClients();
 
     return Padding(
       padding: const EdgeInsets.all(16.0),
@@ -27,6 +29,8 @@ class ClientGraph extends StatelessWidget {
           // Second row with Total Walking and New Client data
           WalkInClientStats(
             totalWalkIn: totalWalkIn,
+            totalNewClient: totalNewClients,
+            totalExistingClient: totalExistingClients,
           ),
           const SizedBox(height: 40.0),
 

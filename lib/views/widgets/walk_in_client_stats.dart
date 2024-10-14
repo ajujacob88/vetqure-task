@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
 class WalkInClientStats extends StatelessWidget {
-  const WalkInClientStats({super.key, required this.totalWalkIn});
+  const WalkInClientStats(
+      {super.key,
+      required this.totalWalkIn,
+      required this.totalNewClient,
+      required this.totalExistingClient});
   final int totalWalkIn;
+  final int totalNewClient;
+
+  final int totalExistingClient;
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +46,9 @@ class WalkInClientStats extends StatelessWidget {
           children: [
             Row(
               children: [
-                const Text(
-                  '30', // New client count
-                  style: TextStyle(
+                Text(
+                  '$totalNewClient', // New client count
+                  style: const TextStyle(
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
@@ -57,7 +64,7 @@ class WalkInClientStats extends StatelessWidget {
                       size: 20.0,
                     ),
                     const Text(
-                      '12%', // Percentage change
+                      '20%', // Percentage change
                       style: TextStyle(
                         fontSize: 16.0,
                         color: Colors.green,
@@ -85,9 +92,9 @@ class WalkInClientStats extends StatelessWidget {
           children: [
             Row(
               children: [
-                const Text(
-                  '20', // Existing client count
-                  style: TextStyle(
+                Text(
+                  '$totalExistingClient', // Existing client count
+                  style: const TextStyle(
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,

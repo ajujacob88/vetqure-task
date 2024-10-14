@@ -13,4 +13,16 @@ class ClientGraphController {
     final data = getWalkInClientData();
     return data.fold(0, (sum, item) => sum + item.walkInCount.toInt());
   }
+
+  // Calculate total new clients
+  int getTotalNewClients() {
+    final data = getWalkInClientData();
+    return data.fold(0, (sum, item) => sum + item.newClientCount);
+  }
+
+  // Calculate total existing clients
+  int getTotalExistingClients() {
+    final data = getWalkInClientData();
+    return data.fold(0, (sum, item) => sum + item.existingClientCount);
+  }
 }
