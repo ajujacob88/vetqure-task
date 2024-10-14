@@ -1,11 +1,17 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:vetqure_task/controllers/client_graph_controller.dart';
+import 'package:vetqure_task/models/client_graph_model.dart';
 
 class LineChartWidget extends StatelessWidget {
   const LineChartWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Fetch data from the controller
+    final ClientGraphController controller = ClientGraphController();
+    final List<WalkInClientData> data = controller.getWalkInClientData();
+
     return LineChart(
       LineChartData(
         gridData: const FlGridData(
@@ -28,33 +34,40 @@ class LineChartWidget extends StatelessWidget {
               reservedSize: 40,
               interval: 1,
               getTitlesWidget: (value, meta) {
-                switch (value.toInt()) {
-                  case 0:
-                    return const Text('');
-                  case 1:
-                    return const Text('9-10 AM');
-                  case 2:
-                    return const Text('10-11 AM');
-                  case 3:
-                    return const Text('11-12 PM');
-                  case 4:
-                    return const Text('12-1 PM');
-                  case 5:
-                    return const Text('1-2 PM');
-                  case 6:
-                    return const Text('2-3 PM');
-                  case 7:
-                    return const Text('3-4 PM');
-                  case 8:
-                    return const Text('4-5 PM');
-                  case 9:
-                    return const Text('5-6 PM');
-                  case 10:
-                    return const Text('6-7 PM');
-                  default:
-                    return const SizedBox();
+                int index = value.toInt() - 1;
+                if (index >= 0 && index < data.length) {
+                  return Text(data[index].timeSlot);
                 }
+                return const SizedBox();
               },
+              // getTitlesWidget: (value, meta) {
+              //   switch (value.toInt()) {
+              //     case 0:
+              //       return const Text('');
+              //     case 1:
+              //       return const Text('9-10 AM');
+              //     case 2:
+              //       return const Text('10-11 AM');
+              //     case 3:
+              //       return const Text('11-12 PM');
+              //     case 4:
+              //       return const Text('12-1 PM');
+              //     case 5:
+              //       return const Text('1-2 PM');
+              //     case 6:
+              //       return const Text('2-3 PM');
+              //     case 7:
+              //       return const Text('3-4 PM');
+              //     case 8:
+              //       return const Text('4-5 PM');
+              //     case 9:
+              //       return const Text('5-6 PM');
+              //     case 10:
+              //       return const Text('6-7 PM');
+              //     default:
+              //       return const SizedBox();
+              //   }
+              // },
             ),
           ),
           topTitles:
@@ -77,19 +90,28 @@ class LineChartWidget extends StatelessWidget {
         maxY: 50,
         lineBarsData: [
           LineChartBarData(
-            spots: [
-              // FlSpot(0, 2),
-              const FlSpot(1, 10),
-              const FlSpot(2, 20),
-              const FlSpot(3, 25),
-              const FlSpot(4, 30),
-              const FlSpot(5, 10),
-              const FlSpot(6, 30),
-              const FlSpot(7, 30),
-              const FlSpot(8, 30),
-              const FlSpot(9, 40),
-              const FlSpot(10, 20),
-            ],
+            // spots: [
+            //   // FlSpot(0, 2),
+            //   const FlSpot(1, 10),
+            //   const FlSpot(2, 20),
+            //   const FlSpot(3, 25),
+            //   const FlSpot(4, 30),
+            //   const FlSpot(5, 10),
+            //   const FlSpot(6, 30),
+            //   const FlSpot(7, 30),
+            //   const FlSpot(8, 30),
+            //   const FlSpot(9, 40),
+            //   const FlSpot(10, 20),
+            // ],
+
+            spots: data
+                .asMap()
+                .entries
+                .map((entry) => FlSpot(
+                      entry.key + 1.0,
+                      entry.value.walkInCount,
+                    ))
+                .toList(),
             isCurved: false,
             color: const Color.fromARGB(255, 8, 100, 175),
             dotData: const FlDotData(show: true),
