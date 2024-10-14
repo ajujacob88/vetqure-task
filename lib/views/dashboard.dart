@@ -7,7 +7,6 @@ import 'package:vetqure_task/views/graphs/revenue_expense_tracker/revenue_expens
 import 'package:vetqure_task/views/orders/recent_orders.dart';
 import 'package:vetqure_task/views/staff%20/staff_availability.dart';
 import 'package:vetqure_task/views/title_bar.dart';
-import 'package:vetqure_task/views/widgets/custom_buttons.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
